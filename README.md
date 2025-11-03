@@ -26,5 +26,5 @@ e o projeto já está pronto para uam BETA.
 <img width="819" height="944" alt="image" src="https://github.com/user-attachments/assets/d8bbb7cf-ebee-4456-92fd-b3c7bc428fde" />
 
 ## Funcionamento do metodo de Adição
-Uploading Desktop 2025.11.03 - 12.03.10.02 - Trim - Trim.mp4…
+https://github.com/user-attachments/assets/b8b5505f-070a-407b-a4c3-122a8824112c
 
