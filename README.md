@@ -6,12 +6,16 @@
 ## Descrição curta: 
 Sistema Java em console para auxiliar mestres de RPG a controlar jogadores, NPCs e monstros durante a sessão.
 
-## Conceitos aplicados
+## Conceitos aplicados:
 Conceitos aplicados
 - Encapsulamento, Herança e Polimorfismo  
 - Uso de coleções (`List<Personagem>`)  
 - Tratamento de exceções (`try/catch`)  
 - Menu funcional em console
+
+## Progressão:
+O progresso do projeto está satisfátorio com quase todas as funcinalidades desejadas funcinais e todas as funcinalidades funcinais
+e o projeto já está pronto para uam BETA.
 
 ## Como executar
 1. Abra o projeto no Visual Studio / VS Code  
@@ -20,3 +24,7 @@ Conceitos aplicados
 
 ## Prints e vidoes da execução
 <img width="819" height="944" alt="image" src="https://github.com/user-attachments/assets/d8bbb7cf-ebee-4456-92fd-b3c7bc428fde" />
+
+## Funcionamento do metodo de Adição
+Uploading Desktop 2025.11.03 - 12.03.10.02 - Trim - Trim.mp4…
+
