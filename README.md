@@ -28,3 +28,6 @@ e o projeto já está pronto para uam BETA.
 ## Funcionamento do metodo de Adição
 https://github.com/user-attachments/assets/b8b5505f-070a-407b-a4c3-122a8824112c
 
+## Funcionamento da funcinalidade Dar Dano/Curar
+https://github.com/user-attachments/assets/142b54f9-8462-419a-8d8e-0ba320937bdc
+
