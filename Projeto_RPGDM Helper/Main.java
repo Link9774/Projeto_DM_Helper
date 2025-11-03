@@ -38,7 +38,7 @@ public class Main {
                     int nivel = Integer.parseInt(s.nextLine());
                     System.out.println("Vida: ");
                     int vida = Integer.parseInt(s.nextLine());
-                    personagens.add(new Player(nome, vida, nivel, classe));
+                    personagens.add(new Player(nome, nivel, vida, classe));
                     System.out.println("Player adicionado com sucesso!");
                    // System.out.println("Pressione qualquer tecla para sair.");
                     //s.nextLine();
@@ -125,3 +125,4 @@ public class Main {
     }
 
 }
+
