@@ -4,15 +4,17 @@ public class Monster extends Personagem{
     private String tipo;
     private int dano;
     private String tipoDano;
+    private int dadoDano;
 
-    public Monster(String nome,String tipo, String tipoDano ,int nivel, int vidaMaxima, int dano){
+    public Monster(String nome,String tipo, String tipoDano ,int nivel, int vidaMaxima, int dano, int dadoDano){
         super(nome, nivel, vidaMaxima);
         this.tipo = tipo;
         this.dano = dano;
         this.tipoDano = tipoDano;
+        this.dadoDano = dadoDano;
     }
     @Override
     public void mostrarInfo(){
-         System.out.println("Nome: " + nome + " | Tipo do monstro: " +tipo+ " | Dano: " + dano + " | Tipo de Dano: " + tipoDano + " | Nivel: " + nivel+ " | Vida " +vida+ "/" +vidaMaxima);
+         System.out.println("Nome: " + getNome() + " | Tipo do monstro: " +tipo+ " | Dano: " + dadoDano+ "D" + dano + " | Tipo de Dano: " + tipoDano + " | Nivel: " + getNivel()+ " | Vida " +getVida()+ "/" +getVidaMaxima());
     }
 }

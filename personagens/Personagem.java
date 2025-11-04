@@ -1,10 +1,10 @@
 package personagens;
 
 public abstract class Personagem {
-    protected String nome;
-    protected int nivel;
-    protected int vida;
-    protected int vidaMaxima;
+    private String nome;
+    private int nivel;
+    private int vida;
+    private int vidaMaxima;
 
     public Personagem (String nome, int nivel, int vidaMaxima){
         this.nome = nome;
@@ -12,9 +12,9 @@ public abstract class Personagem {
         this.vidaMaxima = vidaMaxima;
         this.vida = vidaMaxima;   
     }
-    public void mostrarInfo(){
-    System.out.println("Nome: " + nome + " | Nivel: " + nivel + " | Vida: " +vida+ "/" +vidaMaxima);
-    }
+    public abstract void mostrarInfo();//{
+    //System.out.println("Nome: " + nome + " | Nivel: " + nivel + " | Vida: " +vida+ "/" +vidaMaxima);
+    //}
     
     public void receberDano(int dano){
     vida -= dano;
@@ -32,5 +32,10 @@ public abstract class Personagem {
     public int getNivel(){
         return nivel;
     }
-
+    public int getVida(){
+        return vida;
+    }    
+    public int getVidaMaxima(){
+       return vidaMaxima;
+    }
 }

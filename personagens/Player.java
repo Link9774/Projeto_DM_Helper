@@ -9,7 +9,7 @@ public class Player extends Personagem{
     }
     @Override
     public void mostrarInfo(){
-        System.out.println("[Player] " + nome + " | Classe: " + classe + " | Nivel:" + nivel+ " | Vida " +vida+ "/" +vidaMaxima);
+        System.out.println("[Player] " + getNome() + " | Classe: " + classe + " | Nivel:" + getNivel()+ " | Vida " +getVida()+ "/" +getVidaMaxima());
     }
 
 
