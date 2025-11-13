@@ -17,4 +17,12 @@ public class Monster extends Personagem{
     public void mostrarInfo(){
          System.out.println("Nome: " + getNome() + " | Tipo do monstro: " +tipo+ " | Dano: " + dadoDano+ "D" + dano + " | Tipo de Dano: " + tipoDano + " | Nivel: " + getNivel()+ " | Vida " +getVida()+ "/" +getVidaMaxima());
     }
+    
+    @Override
+    public String toString(){
+        return "Monster;" + super.toString() + ";" + tipo + ";" + tipoDano + ";" + dano + ";" + dadoDano;
+    }
+
+
+
 }

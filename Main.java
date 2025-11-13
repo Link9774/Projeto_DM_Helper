@@ -1,4 +1,5 @@
 import java.io.EOFException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -14,6 +15,14 @@ public class Main {
     Scanner s = new Scanner(System.in);        
     List<Personagem> personagens = new ArrayList<>();   
     
+    try{
+        personagens = (ArrayList<Personagem>) Salvar.carregar();
+        System.out.println("Personagens salvos foram carregados!");
+    } catch(IOException e){
+        System.out.println("Nenhum arquivo encontrado, iniciando uma lista vazia...");
+    }
+
+
     while(true){
         System.out.println("\n ******GERENCIADOR DE RPG DE MESA******");
         System.out.println("1- Adicionar Player(Jogador)");
@@ -22,7 +31,8 @@ public class Main {
         System.out.println("4- Listar personagens");
         System.out.println("5- Aplicar dano ou cura");
         System.out.println("6- Exibir Ordem de turnos");
-        System.out.println("7- Sair");
+        System.out.println("7- Remover um personagem");
+        System.out.println("8- Sair");
         System.out.print("Escolha: ");
         
         String opcao = s.nextLine();
@@ -39,9 +49,10 @@ public class Main {
                     System.out.println("Vida: ");
                     int vida = Integer.parseInt(s.nextLine());
                     personagens.add(new Player(nome, nivel, vida, classe));
+                    
+                    Salvar.salvar(personagens);
                     System.out.println("Player adicionado com sucesso!");
-                   // System.out.println("Pressione qualquer tecla para sair.");
-                    //s.nextLine();
+
                 }
                 case "2" ->{
                     System.out.println("Nome: ");
@@ -59,6 +70,7 @@ public class Main {
                     System.out.println("Vida: ");
                     int vida = Integer.parseInt(s.nextLine());
                     personagens.add(new Monster(nome, tipo, tipoDano, nivel, vida, dano, dadoDano));
+                    Salvar.salvar(personagens);
                     System.out.println("Agora seus jogadores vão ter que se preocupar com " +nome);
                 }
                 case "3" ->{
@@ -71,6 +83,7 @@ public class Main {
                     System.out.println("Vida: ");
                     int vida = Integer.parseInt(s.nextLine());
                     personagens.add(new NPC(nome, papel, vida, nivel));
+                    Salvar.salvar(personagens);
                 }
                 case "4" ->{
                     System.out.println("\n***** Personagens na sessão *****");
@@ -105,8 +118,15 @@ public class Main {
                     System.out.println("Qauntidade: ");
                     int valor = Integer.parseInt(s.nextLine());
                     
-                    if (tipo.equalsIgnoreCase("D")) alvo.receberDano(valor);
-                    else alvo.curarVida(valor);
+                    if (tipo.equalsIgnoreCase("D")){
+                        alvo.receberDano(valor);
+                        Salvar.salvar(personagens);
+                    }else {
+                        alvo.curarVida(valor);
+                        Salvar.salvar(personagens);
+                    }
+                    
+                    
                 
                     System.out.println("Vida do personagem atualizada com sucesso !!!");
                 }
@@ -118,11 +138,25 @@ public class Main {
                     System.out.println("Pressione qualquer tecla caso queira voltar ao menu");
                     s.nextLine();
                 }
-                case "7" ->{
+                case "7"->{
+                    System.out.println("Digite o nome do personagem que deseja remover");
+                    String nome = s.nextLine();
+                    Personagem alvo = personagens.stream()
+                    .filter(p -> p.getNome().equalsIgnoreCase(nome))
+                    .findFirst()
+                    .orElse(null);
+                    
+                    if(null == alvo) throw new Exception("Personagem não encontrado!!!");
+                    
+                    personagens.remove(alvo);
+                    Salvar.salvar(personagens);
+                    System.out.println("Personagem "+ nome +" removido com sucesso");
+                }
+                case "8" ->{
                     System.out.println("Fim da sessão, até a proxima sessão");
                     return;
                 }
-                case "8" ->{
+                case "9" ->{
                     System.out.println("""
                             ⠀⠀⠀⠀⠀⠀⠀⢹⡀⠀⠀⠀⠀⠀⠘⠀⣷⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⠀⠀⠀⠙⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⠃⠀⠀⠀⠀⠀⣤⠀⢏⠀⠀⠀⠀⢠⣠⡆⠀⠀⣦⡀⠀⠳⡀⠀⠀⠀⠀⠑⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈

@@ -1,0 +1,2 @@
+Monster;Zumbi;5;15;15;Morto vivo;Necrotico;6;2
+Player;Oregano;2;0;18;Ladino

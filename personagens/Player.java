@@ -7,9 +7,15 @@ public class Player extends Personagem{
         super(nome, nivel, vidaMaxima);
         this.classe = classe;
     }
+    
     @Override
     public void mostrarInfo(){
         System.out.println("[Player] " + getNome() + " | Classe: " + classe + " | Nivel:" + getNivel()+ " | Vida " +getVida()+ "/" +getVidaMaxima());
+    }
+
+    @Override
+    public String toString(){
+        return "Player;" + super.toString() + ";" + classe;
     }
 
 

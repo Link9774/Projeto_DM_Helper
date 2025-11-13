@@ -11,4 +11,10 @@ public class NPC extends Personagem{
     public void mostrarInfo(){
          System.out.println("NPC " + getNome() + " | Papel do NPC: " + papel + " | Nivel:" + getNivel()+ " | Vida " +getVida()+ "/" +getVidaMaxima());
     }
+
+    @Override
+    public String toString(){
+        return "NPC;" + super.toString() + ";" + papel;
+    }
+
 }

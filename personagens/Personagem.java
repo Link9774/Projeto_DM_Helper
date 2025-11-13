@@ -38,4 +38,9 @@ public abstract class Personagem {
     public int getVidaMaxima(){
        return vidaMaxima;
     }
+
+    @Override
+    public String toString() {
+    return getNome() + ";" + getNivel() + ";" + getVida() + ";" + getVidaMaxima();
+}
 }
