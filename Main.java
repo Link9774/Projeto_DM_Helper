@@ -82,7 +82,7 @@ public class Main {
                     int nivel = Integer.parseInt(s.nextLine());
                     System.out.println("Vida: ");
                     int vida = Integer.parseInt(s.nextLine());
-                    personagens.add(new NPC(nome, papel, vida, nivel));
+                    personagens.add(new NPC(nome, papel, nivel, vida));
                     Salvar.salvar(personagens);
                 }
                 case "4" ->{
